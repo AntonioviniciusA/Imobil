@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título do Débito -->
+        <TextView
+            android:id="@+id/tituloDebito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título do Débito"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:padding="10dp" />
+
+        <!-- Descrição do Débito -->
+        <TextView
+            android:id="@+id/descricaoDebito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descrição do Débito"
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
+            android:padding="5dp" />
+
+        <!-- Valor do Débito -->
+        <TextView
+            android:id="@+id/valorDebito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Valor do Débito"
+            android:textSize="18sp"
+            android:textColor="@color/verde"
+            android:gravity="center_horizontal"
+            android:padding="5dp" />
+
+        <!-- Seção de Escolha de Método de Pagamento -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escolha o método de pagamento:"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp" />
+
+        <!-- Opção de Cartão de Crédito -->
+
+        <!-- Opção de Transferência Bancária -->
+        <Button
+            android:id="@+id/btnCartaoCredito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:drawableStart="@mipmap/ic_cartao_de_credito"
+            android:drawablePadding="10dp"
+            android:padding="16dp"
+            android:text="Cartão de Crédito"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnTransferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/black"
+            android:drawableStart="@mipmap/ic_transferencia"
+            android:drawablePadding="10dp"
+            android:padding="16dp"
+            android:text="Transferência Bancária"
+            android:textColor="@android:color/white" />
+
+        <!-- Opção de Pix -->
+        <Button
+            android:id="@+id/btnPix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/black"
+            android:drawableStart="@mipmap/ic_pix"
+            android:drawablePadding="10dp"
+            android:padding="16dp"
+            android:text="Pix"
+            android:textColor="@android:color/white" />
+
+        <!-- Opção de Boleto Bancário -->
+        <Button
+            android:id="@+id/btnBoleto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/black"
+            android:drawableStart="@mipmap/ic_boleto_bancario"
+            android:drawablePadding="10dp"
+            android:padding="16dp"
+            android:text="Boleto Bancário"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

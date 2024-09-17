@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.PagamentosActivity">
+
+    <LinearLayout
+        android:id="@+id/header_debitos"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#03253A"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/titlePag"
+            android:layout_width="104dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:text="Débitos"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+
+    <!--nav-->
+
+    <ListView
+        android:id="@+id/listViewDebitos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:divider="#CCCCCC"
+        android:dividerHeight="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_debitos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#03253A"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/home_icon"
+            android:layout_width="56dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_home_black_24dp" />
+
+        <ImageView
+            android:id="@+id/payment_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:src="@mipmap/ic_pagamento" />
+
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_menu" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

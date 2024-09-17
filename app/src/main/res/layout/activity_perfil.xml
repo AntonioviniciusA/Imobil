@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Foto de Perfil -->
+        <ImageView
+            android:id="@+id/imgProfilePicture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_circle"
+            android:contentDescription="Foto de perfil"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botão de Editar Perfil -->
+        <Button
+            android:id="@+id/btnEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editar_perfil"
+            app:layout_constraintTop_toBottomOf="@id/imgProfilePicture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Dados Pessoais -->
+        <TextView
+            android:id="@+id/txtPersonalData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dados_pessoais"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/btnEditProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Nome -->
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome: João Silva"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/txtPersonalData"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: joao@email.com"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/txtName"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Formas de Pagamento -->
+        <TextView
+            android:id="@+id/txtPaymentMethods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/formas_de_pagamento"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/txtEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <!-- Cartões Salvos -->
+        <TextView
+            android:id="@+id/txtSavedCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cartão: **** 1234"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/txtPaymentMethods"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Conexões (Instituições Cadastradas) -->
+        <TextView
+            android:id="@+id/txtConnections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/conexoes"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/txtSavedCards"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <!-- Lista de Conexões -->
+        <TextView
+            android:id="@+id/txtInstitutions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instituição 1: Banco XYZ"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/txtConnections"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Configurações do App -->
+        <TextView
+            android:id="@+id/txtAppSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/configuracoes_app"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/txtInstitutions"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <!-- Licenças -->
+        <TextView
+            android:id="@+id/txtLicenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/licencas"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/txtAppSettings"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
