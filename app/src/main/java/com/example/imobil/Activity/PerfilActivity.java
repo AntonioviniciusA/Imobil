@@ -39,7 +39,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnEditProfile = findViewById(R.id.btnEditProfile);
 
         // Carregar os dados do perfil
-        loadPerfilUsuarioe();
+        loadPerfilUsuario();
     }
 
     private void loadPerfilUsuario() {

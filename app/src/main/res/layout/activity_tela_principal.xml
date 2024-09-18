@@ -7,7 +7,26 @@ across the layout configurations
     android:id="@+id/activity_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/header_anuncios"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#03253A"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <TextView
+            android:id="@+id/titlePagAnuncios"
+            android:layout_width="104dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:text="@string/anuncios"
+            android:textColor="#FFFFFF"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,8 +38,9 @@ across the layout configurations
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="#03253A"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:visibility="visible">
 
             <!-- Espere pelo conteúdo do topo, se necessário -->
         </LinearLayout>
@@ -34,99 +54,17 @@ across the layout configurations
             android:background="#E0E0E0"
             android:padding="10dp">
 
-            <!-- Row 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#D3D3D3"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="299dp"
-                    android:layout_height="wrap_content"
-                    android:background="#D3D3D3"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/TituloAnuncio"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/titulo_anuncio"
-                        android:padding="5dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="parent" />
-
-                    <TextView
-                        android:id="@+id/DescricaoDebitos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/endereco_anuncio"
-                        android:padding="5dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/TituloAnuncio" />
-
-                    <TextView
-                        android:id="@+id/valorAnuncio"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/valor_anuncio"
-                        android:padding="5dp"
-                        android:textColor="@color/verde"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/DescricaoDebitos" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="10dp"
-                    android:background="#D3D3D3"
-                    android:backgroundTint="#FFFFFF" />
-
-            </LinearLayout>
-
-            <!-- Other Placeholder Rows -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#D3D3D3"
-                android:layout_marginTop="10dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#D3D3D3"
-                android:layout_marginTop="10dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#D3D3D3"
-                android:layout_marginTop="10dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#D3D3D3"
-                android:layout_marginTop="10dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#D3D3D3"
-                android:layout_marginTop="10dp" />
-
+            <ListView
+                android:id="@+id/listViewAnuncios"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:divider="#CCCCCC"
+                android:dividerHeight="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_debitos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
         </LinearLayout>
-
         <!-- Bottom Navigation Bar -->
         <LinearLayout
             android:layout_width="match_parent"

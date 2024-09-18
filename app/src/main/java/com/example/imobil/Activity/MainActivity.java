@@ -25,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_principal);
 
-        listView = findViewById(R.id.listView);
+        listView = findViewById(R.id.listViewAnuncios);
         anuncios = new ArrayList<>();
         adapter = new AnuncioAdapter(this, anuncios);
         listView.setAdapter(adapter);
 
         // Método para carregar dados do banco de dados
-        loadAnunciosFromDatabase();
+        loadAnuncios();
 
-        private void loadAnunciosFromDatabase() {
+        private void loadAnuncios(){
             // Implemente aqui a lógica para buscar os dados do banco de dados
             //Adicionar os dados à lista de anúncios e notificar o adaptador
             Anuncio.add(new Anuncio("Título 1", "Descrição 1", "R$ 100,00"));

@@ -27,7 +27,7 @@
             app:autoSizeTextType="uniform" />
     </LinearLayout>
 
-    <!--nav-->
+
 
     <ListView
         android:id="@+id/listViewDebitos"
@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
+    <!--nav-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
