@@ -1,16 +1,17 @@
 package com.example.imobil;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.imobil.Activity.MainActivityImobiliaria;
+
 import java.util.List;
 
 public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
-    public AnuncioAdapter(Context context, List<Anuncio> anuncios) {
+    public AnuncioAdapter(MainActivityImobiliaria context, List<Anuncio> anuncios) {
         super(context, 0, anuncios);
     }
 
