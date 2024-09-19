@@ -31,5 +31,6 @@ public class AnunciadosAdapter  extends ArrayAdapter<Anunciados> {
         valor.setText(anunciados);
 
 
+        return converterView;
     }
 }
