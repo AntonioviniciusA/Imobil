@@ -4,8 +4,10 @@ public class Anuncio {
     private String tituloImo;
 
     public Anuncio(String tituloImo, String endereco, String valor) {
+        this.tituloImo = tituloImo;
+        this.endereco = endereco;
+        this.valor = valor;
     }
-
     public String getTituloImo() {
         return tituloImo;
     }

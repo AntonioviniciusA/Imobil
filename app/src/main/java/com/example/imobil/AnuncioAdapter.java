@@ -6,12 +6,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.imobil.Activity.MainActivityImobiliaria;
+import com.example.imobil.Activity.MainActivity;
 
 import java.util.List;
 
 public class AnuncioAdapter extends ArrayAdapter<Anuncio> {
-    public AnuncioAdapter(MainActivityImobiliaria context, List<Anuncio> anuncios) {
+    public AnuncioAdapter(MainActivity context, List<Anuncio> anuncios) {
         super(context, 0, anuncios);
     }
 

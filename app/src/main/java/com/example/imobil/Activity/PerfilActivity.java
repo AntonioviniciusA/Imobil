@@ -43,41 +43,41 @@ public class PerfilActivity extends AppCompatActivity {
     }
 
     private void loadPerfilUsuario() {
-        ApiService apiService = ApiClient.getClient().create(ApiService.class);
-
-        Call<PerfilUsuario> call = apiService.getUserProfile();
-        call.equals(new Callback<PerfilUsuario>() {
-            @Override
-            public void onResponse(Call<PerfilUsuario> call, Response<PerfilUsuario> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    // Atualizar a UI com os dados do perfil
-                    PerfilUsuario userProfile = response.body();
-
-                    txtName.setText("Nome: " + userProfile.getName());
-                    txtEmail.setText("Email: " + userProfile.getEmail());
-                    txtSavedCards.setText("Cartão: " + userProfile.getSavedCard());
-
-                    // Atualizando a lista de instituições
-                    StringBuilder institutionsText = new StringBuilder();
-                    for (String institution : userProfile.getInstitutions()) {
-                        institutionsText.append(institution).append("\n");
-                    }
-                    txtInstitutions.setText(institutionsText.toString());
-
-                    // Carregar a imagem de perfil
-                    Picasso.get().load(userProfile.getProfilePictureUrl()).into(imgProfilePicture);
-                } else {
-                    // Tratar erro
-                    Toast.makeText(PerfilActivity.this, "Erro ao carregar perfil", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<PerfilUsuario> call, Throwable t) {
-                // Tratar falha na requisição
-                Toast.makeText(PerfilActivity.this, "Falha na conexão", Toast.LENGTH_SHORT).show();
-            }
-        });
+       // ApiService apiService = ApiClient.getClient().create(ApiService.class);
+//
+//        Call<PerfilUsuario> call = apiService.getUserProfile();
+//        call.equals(new Callback<PerfilUsuario>() {
+//           @Override
+//            public void onResponse(Call<PerfilUsuario> call, Response<PerfilUsuario> response) {
+//                if (response.isSuccessful() && response.body() != null) {
+//                    // Atualizar a UI com os dados do perfil
+//                    PerfilUsuario userProfile = response.body();
+//
+//                    txtName.setText("Nome: " + userProfile.getName());
+//                    txtEmail.setText("Email: " + userProfile.getEmail());
+//                    txtSavedCards.setText("Cartão: " + userProfile.getSavedCard());
+//
+//                    // Atualizando a lista de instituições
+//                    StringBuilder institutionsText = new StringBuilder();
+//                    for (String institution : userProfile.getInstitutions()) {
+//                        institutionsText.append(institution).append("\n");
+//                    }
+//                    txtInstitutions.setText(institutionsText.toString());
+//
+//                    // Carregar a imagem de perfil
+//                    Picasso.get().load(userProfile.getProfilePictureUrl()).into(imgProfilePicture);
+//                } else {
+//                    // Tratar erro
+//                    Toast.makeText(PerfilActivity.this, "Erro ao carregar perfil", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<PerfilUsuario> call, Throwable t) {
+//                // Tratar falha na requisição
+//                Toast.makeText(PerfilActivity.this, "Falha na conexão", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }
 
