@@ -10,6 +10,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.imobil.databinding.ActivityLoginImobiliariaBinding;
+import com.example.imobil.serviços.ApiClient;
+import com.example.imobil.serviços.ResponseModel;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LoginImobiliaria extends AppCompatActivity {
@@ -57,18 +59,31 @@ public class LoginImobiliaria extends AppCompatActivity {
     }
 
     private void login(View view) {
-        final View progressBar = binding.progressBar;
-        progressBar.setVisibility(View.VISIBLE);
+        ApiService apiService = ApiClient.getClient().create(ApiService.class);
+        Call<ResponseModel> call = apiService.loginCliente(
+                binding.editEmail.getText().toString(),
+                binding.editSenha.getText().toString()
+        );
 
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+        call.enqueue(new Callback<ResponseModel>() {
             @Override
-            public void run() {
-                navegarTelaPrincipal();
-                Snackbar snackbar = Snackbar.make(view, "Login efetuado com sucesso!!", Snackbar.LENGTH_SHORT);
-                snackbar.show();
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    if (response.body().getStatus().equals("success")) {
+                        navegarTelaPrincipal();
+                    } else {
+                        Snackbar.make(view, response.body().getMessage(), Snackbar.LENGTH_SHORT).show();
+                    }
+                }
             }
-        }, 3000);
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Snackbar.make(view, "Erro na conexão", Snackbar.LENGTH_SHORT).show();
+            }
+        });
     }
+
 
     private void navegarTelaPrincipal() {
         Intent intent = new Intent(this, MainActivityImobiliaria.class);

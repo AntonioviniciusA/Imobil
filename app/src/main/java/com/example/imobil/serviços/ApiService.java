@@ -1,11 +1,25 @@
-package com.example.imobil.serviços;
+package com.example.imobil.servicos;
 
-import android.telecom.Call;
+import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.POST;
 
-import retrofit2.http.GET;
 
 public interface ApiService {
-    @GET("user/profile")
-    Call getUserProfile();
+
+    @FormUrlEncoded
+    @POST("loginCliente.php")
+    Call<ResponseModel> loginCliente(
+            @Field("email") String email,
+            @Field("senha") String senha
+    );
+
+    @FormUrlEncoded
+    @POST("loginImobiliaria.php")
+    Call<ResponseModel> loginImobiliaria(
+            @Field("cnpj") String cnpj,
+            @Field("senha") String senha
+    );
 }
 
