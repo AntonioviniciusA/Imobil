@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.imobil.databinding.ActivityLoginImobiliariaBinding;
 import com.example.imobil.serviços.ApiClient;
+import com.example.imobil.serviços.ApiService;
 import com.example.imobil.serviços.ResponseModel;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -44,10 +48,11 @@ public class LoginImobiliaria extends AppCompatActivity {
                     Snackbar snackbar = Snackbar.make(v, "Senha deve ter pelo menos 7 caracteres!", Snackbar.LENGTH_SHORT);
                     snackbar.show();
                 } else {
-                    login(v);
+                    loginImobiliaria(v); // Corrigido para chamar o método correto
                 }
             }
         });
+
 
         binding.txtSouinquilino.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,11 +63,11 @@ public class LoginImobiliaria extends AppCompatActivity {
         });
     }
 
-    private void login(View view) {
+    private void loginImobiliaria(View view) {
         ApiService apiService = ApiClient.getClient().create(ApiService.class);
-        Call<ResponseModel> call = apiService.loginCliente(
-                binding.editEmail.getText().toString(),
-                binding.editSenha.getText().toString()
+        Call<ResponseModel> call = apiService.loginImobiliaria(
+                binding.editCnpj.getText().toString(),
+                binding.editSenhaimob.getText().toString()
         );
 
         call.enqueue(new Callback<ResponseModel>() {
@@ -70,7 +75,7 @@ public class LoginImobiliaria extends AppCompatActivity {
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     if (response.body().getStatus().equals("success")) {
-                        navegarTelaPrincipal();
+                        navegarTelaPrincipalImobiliaria();
                     } else {
                         Snackbar.make(view, response.body().getMessage(), Snackbar.LENGTH_SHORT).show();
                     }
@@ -85,11 +90,13 @@ public class LoginImobiliaria extends AppCompatActivity {
     }
 
 
-    private void navegarTelaPrincipal() {
+
+    private void navegarTelaPrincipalImobiliaria() {
         Intent intent = new Intent(this, MainActivityImobiliaria.class);
         startActivity(intent);
         finish();
     }
+
     private void loginClienteTela(View view){
         final View progressBar = binding.progressBar;
         progressBar.setVisibility(View.VISIBLE);
