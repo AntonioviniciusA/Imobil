@@ -7,9 +7,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import com.example.imobil.databinding.ActivityLoginClienteBinding;
 import com.example.imobil.serviços.ApiClient;
+import com.example.imobil.serviços.ApiService;
 import com.example.imobil.serviços.ResponseModel;
 import com.google.android.material.snackbar.Snackbar;
 
