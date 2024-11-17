@@ -5,7 +5,7 @@
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaPrincipal">
+    tools:context=".Anunciados">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -22,6 +22,6 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include
-        android:id="@+id/content_tela_principal"
-        layout="@layout/content_tela_principal" />
+        android:id="@+id/activity_tela_principal"
+        layout="@layout/activity_tela_principal" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

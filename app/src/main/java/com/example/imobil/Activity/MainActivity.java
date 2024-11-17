@@ -1,5 +1,6 @@
 package com.example.imobil.Activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView navOpen;
     private NavigationView navigationView;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

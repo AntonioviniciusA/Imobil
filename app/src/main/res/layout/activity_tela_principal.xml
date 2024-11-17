@@ -103,12 +103,32 @@ across the layout configurations
         </LinearLayout>
         <!-- Bottom Navigation Bar -->
         <LinearLayout
+            android:id="@+id/navigation_view"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="#03253A"
             android:orientation="horizontal"
-            android:gravity="center"/>
+            android:gravity="center">
+        <ImageView
+            android:id="@+id/home_icon"
+            android:layout_width="56dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_home_black_24dp" />
 
+        <ImageView
+            android:id="@+id/payment_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:src="@mipmap/ic_pagamento" />
+
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_menu" />
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>
